@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Happy Birthday 💖</title>
+
+<style>
+body {
+    font-family: 'cairo', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #ff758c, #ffb199);
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+h1 {
+    font-family: 'cairo', serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+    p {
+    font-family: 'cairo', sans-serif;
+    font-size: 30px;
+    line-height: 1.6;
+}
+button {
+    font-family:'Playfair Display', serif ;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.back-btn {
+    position: fixed;
+    bottom: 30px;   /* 👈 المسافة من تحت */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    padding: 12px 30px;
+    border-radius: 25px;
+    background: #eee;
+    color: #ff4d6d;
+}
+.back-btn:hover {
+    background: #ff4d6d;
+    color: white;
+    transform: scale(1.05);
+}
+/* الكونتينر */
+.photo-section {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 40px auto;
+}
+
+/* كل صورة */
+.photo {
+    position: absolute;
+    width: 120px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(-100px) rotate(0deg);
+    animation: drop 1s forwards;
+}
+
+/* الصورة نفسها */
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* توزيع عشوائي */
+.photo:nth-child(1) {
+    left: 10%;
+    top: 15%;
+    transform: rotate(-10deg);
+    animation-delay: 0.3s;
+}
+
+.photo:nth-child(2) {
+    left: 40%;
+    top: 10%;
+    transform: rotate(8deg);
+    animation-delay: 0.6s;
+}
+
+.photo:nth-child(3) {
+    left: 70%;
+    top: 30%;
+    transform: rotate(-5deg);
+    animation-delay: 0.9s;
+}
+
+.photo:nth-child(4) {
+    left: 15%;
+    top: 50%;
+    transform: rotate(6deg);
+    animation-delay: 1.2s;
+}
+
+.photo:nth-child(5) {
+    left: 60%;
+    top: 55%;
+    transform: rotate(-8deg);
+    animation-delay: 1.5s;
+}
+.back-btn {
+    z-index: 9999;
+}
+/* حركة النزول */
+@keyframes drop {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--rotate, 0deg));
+    }
+}
+
+/* حركة لما الماوس ييجي */
+.photo:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 10;
+}
+
+/* 📱 موبايل */
+@media (max-width: 600px) {
+    .photo {
+        width: 90px;
+        height: 120px;
+    }
+
+    .photo-section {
+        height: 300px;
+    }
+}
+.container {
+    padding: 30px;
+    animation: fadeIn 2s ease;
+}
+
+
+/* كتابة متحركة */
+.lyrics {
+    font-size: 22px;
+    margin-top: 15px;
+    height: 30px;
+}
+
+/* slideshow */
+.slideshow {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 25px auto;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 الأغنية -->
+<audio autoplay loop>
+    <source src="c:\Users\FGstore\Downloads\ikoliks_aj-happy-birthday-467864.mp3" type="audio/mpeg">
+</audio>
+<!-- زرار الرجوع -->
+
+<button class="back-btn" onclick="goBack()">back →</button>
+
+<script>
+function goBack() {
+    window.location.href = "index.html";
+}
+</script>
+</body>
+
+<div class="container">
+    <h1>كل سنه وانتي طيبه ي جنونتي 
+ </h1>
+ <h2>وجودك في حياتي اجمل حاجه حصلتلي</h2>
+ <h3>ربنا يخلينا لبعض ويديم صحبتنا🥺💗</h3>
+
+    <div class="lyrics" id="lyrics"></div>
+
+    <div class="photo-section">
+
+    <div class="photo">
+        <img src="img,jpeg.jpeg"></div>
+    <div class="photo">
+        <img src="img1.jpeg.jpeg"></div>
+    <div class="photo">
+        <img src="img2.jpeg.jpeg"></div>
+    <div class="photo">
+        <img src="img3.jpeg.jpeg"></div>
+    <div class="photo">
+        <img src="img4.jpeg.jpeg"></div>
+    <div class="photo">
+        <img src="img5.jpeg.jpeg"></div>
+
+</div>
+
+    <p>بحبك اوييي💖</p>
+</div>
+
+<script>
+// 🎞️ السلايد شو
+let slides = document.querySelectorAll(".slide");
+let i = 0;
+
+setInterval(() => {
+    slides[i].classList.remove("active");
+    i = (i + 1) % slides.length;
+    slides[i].classList.add("active");
+}, 2500);
+
+
+function typeEffect() {
+    if (char < text[index].length) {
+        document.getElementById("lyrics").innerHTML += text[index].charAt(char);
+        char++;
+        setTimeout(typeEffect, speed);
+    } else {
+        setTimeout(() => {
+            document.getElementById("lyrics").innerHTML = "";
+            char = 0;
+            index = (index + 1) % text.length;
+            typeEffect();
+        }, 1500);
+    }
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+       

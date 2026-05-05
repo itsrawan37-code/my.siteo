@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Birthday Cake 🎂</title>
+
+<style>
+    body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #ff758c, #ffb199);
+    overflow:hidden;
+}
+
+.birthday-card{
+    text-align:center;
+}
+
+/* التورتة */
+.cake{
+    position:relative;
+    width:220px;
+    max-width: 400px;
+    height:180px;
+    margin:auto;
+    animation: pop 1s ease forwards;
+}
+
+/* الطبق */
+.plate{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:180px;
+    height:8px;
+    background:white;
+    border-radius:10px;
+}
+
+/* الطبقات */
+.layer{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%) scaleX(0);
+    transform-origin:center;
+    animation: build 0.7s forwards;
+}
+
+.layer-bottom{
+    width:140px;
+    height:45px;
+    background:#8a5b4f;
+    bottom:8px;
+    border-radius:8px;
+    animation-delay:.4s;
+}
+
+.layer-middle{
+    width:140px;
+    height:18px;
+    background:#a86f62;
+    bottom:48px;
+    border-radius:8px;
+    animation-delay:.8s;
+}
+
+/* الكريمة */
+.icing{
+    position:absolute;
+    width:150px;
+    height:20px;
+    background:white;
+    left:50%;
+    transform:translateX(-50%) scaleX(0);
+    bottom:58px;
+    border-radius:10px;
+    animation: build .7s forwards;
+    animation-delay:1.2s;
+}
+
+/* نقط الكريمة */
+.drip{
+    position:absolute;
+    background:white;
+    width:14px;
+    border-radius:0 0 10px 10px;
+    opacity:0;
+    animation: fade .5s forwards;
+}
+
+.drip1{
+    height:25px;
+    left:58px;
+    bottom:42px;
+    animation-delay:1.5s;
+}
+
+.drip2{
+    height:18px;
+    left:102px;
+    bottom:49px;
+    animation-delay:1.7s;
+}
+
+.drip3{
+    height:28px;
+    left:142px;
+    bottom:39px;
+    animation-delay:1.9s;
+}
+
+/* الشمعة */
+.candle{
+    position:absolute;
+    width:16px;
+    height:55px;
+    background:white;
+    left:50%;
+    transform:translateX(-50%) scaleY(0);
+    bottom:78px;
+    border-radius:4px;
+    animation: rise .5s forwards;
+    animation-delay:2.2s;
+}
+
+.candle::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:2px;
+    height:100%;
+    background:#e7a2b8;
+}
+
+/* النار */
+.flame{
+    position:absolute;
+    width:18px;
+    height:24px;
+    background:#ffd84d;
+    border-radius:50% 50% 50% 50%;
+    left:50%;
+    top:-22px;
+    transform:translateX(-50%);
+    box-shadow:0 0 20px #ffd84d;
+    animation:flicker .8s infinite alternate;
+}
+
+.Happy_Birthday {
+font-family: 'My love'; 
+content: "ya ganoon💖";
+color: #c2185b;
+ font-size: 3.5em; 
+ font-weight: 700;
+text-shadow: 2px 2px 5px
+ rgba(255, 255, 255, 0.7);
+}
+
+/* Animations */
+@keyframes build{
+    to{transform:translateX(-50%) scaleX(1);}
+}
+
+@keyframes rise{
+    to{transform:translateX(-50%) scaleY(1);}
+}
+
+@keyframes fade{
+    to{opacity:1;}
+}
+
+@keyframes flicker{
+    from{transform:translateX(-50%) scale(1);}
+    to{transform:translateX(-50%) scale(1.1);}
+}
+
+@keyframes pop{
+    from{transform:scale(.8);}
+    to{transform:scale(1);}
+}
+
+button {
+    font-family:'Playfair Display', serif ;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.next-btn {
+    position: fixed;
+    bottom: 30px;   /* 👈 المسافة من تحت */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    padding: 12px 30px;
+    border-radius: 25px;
+    background: #eee;
+    color: #ff4d6d;
+}
+.next-btn:hover {
+    background: #ff4d6d;
+    color: white;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+<div class="birthday-card">
+
+    <div class="cake">
+        <div class="plate"></div>
+
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="icing"></div>
+
+        <div class="drip drip1"></div>
+        <div class="drip drip2"></div>
+        <div class="drip drip3"></div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <h1 class="Happy_Birthday">Happy Birthday ya ganoon💖 </h1>
+<h2 class="Happy_Birthday">I LOVE u </h2>
+</div>
+
+<button class="next-btn" onclick="goNext()">Next →</button>
+
+<script>
+function goNext() {
+    window.location.href = "birthday.html";
+}
+</script>
+
+</body>
+</html>
