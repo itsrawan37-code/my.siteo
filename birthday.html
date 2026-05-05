@@ -187,9 +187,13 @@ button {
 <body>
 
 <!-- 🎶 الأغنية -->
-<audio autoplay loop>
-    <source src="c:\Users\FGstore\Downloads\ikoliks_aj-happy-birthday-467864.mp3" type="audio/mpeg">
+<audio id="music" loop>
+  <source src="https://raw.githubusercontent.com/itsrawan37-code/my.siteo/main/ikoliks_aj-happy-birthday-467864.mp3" type="audio/mpeg">
 </audio>
+
+<button onclick="document.getElementById('music').play()">
+▶ تشغيل الموسيقى
+</button>
 <!-- زرار الرجوع -->
 
 <button class="back-btn" onclick="goBack()">back →</button>
